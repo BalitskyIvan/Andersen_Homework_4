@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AndersenHomework</string>
+    <string name="r">R</string>
+    <string name="g">G</string>
+    <string name="b">B</string>
+    <string name="clock_face_color">Clock Face Color</string>
+    <string name="hours_arrow_color">Hours Arrow Color</string>
+    <string name="seconds_arrow_color">Seconds Arrow Color</string>
+    <string name="minutes_arrow_color">Minutes Arrow Color</string>
+    <string name="clock_size">Clock Size</string>
+</resources>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <balitskyivan.andersenhomework.CustomWatch
+        android:id="@+id/customWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:text="Hello World!"
+        app:clockRadius="200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customWatch">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+            android:id="@+id/scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clock_size"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+            <SeekBar
+                android:id="@+id/clockSize"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="300"
+                android:min="30"
+                android:progress="30" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/clock_face_color"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/clockFaceR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/r"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/clockFaceRBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="1"
+
+                    app:layout_constraintBottom_toTopOf="@+id/clockFaceGBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/clockFaceR"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/clockFaceG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/g"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clockFaceR" />
+
+                <SeekBar
+                    android:id="@+id/clockFaceGBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/clockFaceBBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/clockFaceG"
+                    app:layout_constraintTop_toBottomOf="@+id/clockFaceRBar" />
+
+                <TextView
+                    android:id="@+id/clockFaceB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/b"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clockFaceG" />
+
+                <SeekBar
+                    android:id="@+id/clockFaceBBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/clockFaceB"
+                    app:layout_constraintTop_toBottomOf="@+id/clockFaceGBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hours_arrow_color"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hoursArrowR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/r"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/hoursArrowRBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/hoursArrowGBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hoursArrowR"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hoursArrowG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/g"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hoursArrowR" />
+
+                <SeekBar
+                    android:id="@+id/hoursArrowGBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/hoursArrowBBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hoursArrowG"
+                    app:layout_constraintTop_toBottomOf="@+id/hoursArrowRBar" />
+
+                <TextView
+                    android:id="@+id/hoursArrowB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/b"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hoursArrowG" />
+
+                <SeekBar
+                    android:id="@+id/hoursArrowBBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hoursArrowB"
+                    app:layout_constraintTop_toBottomOf="@+id/hoursArrowGBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/minutes_arrow_color"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/minutesArrowR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/r"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/minutesArrowRBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/minutesArrowGBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/minutesArrowR"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/minutesArrowG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/g"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/minutesArrowR" />
+
+                <SeekBar
+                    android:id="@+id/minutesArrowGBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/minutesArrowBBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/minutesArrowG"
+                    app:layout_constraintTop_toBottomOf="@+id/minutesArrowRBar" />
+
+                <TextView
+                    android:id="@+id/minutesArrowB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/b"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/minutesArrowG" />
+
+                <SeekBar
+                    android:id="@+id/minutesArrowBBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/minutesArrowB"
+                    app:layout_constraintTop_toBottomOf="@+id/minutesArrowGBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/seconds_arrow_color"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/secondsArrowR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/r"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SeekBar
+                    android:id="@+id/secondsArrowRBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/secondsArrowGBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/secondsArrowR"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/secondsArrowG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/g"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondsArrowR" />
+
+                <SeekBar
+                    android:id="@+id/secondsArrowGBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toTopOf="@+id/secondsArrowBBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/secondsArrowG"
+                    app:layout_constraintTop_toBottomOf="@+id/secondsArrowRBar" />
+
+                <TextView
+                    android:id="@+id/secondsArrowB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:text="@string/b"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondsArrowG" />
+
+                <SeekBar
+                    android:id="@+id/secondsArrowBBar"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:max="255"
+                    android:progress="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/secondsArrowB"
+                    app:layout_constraintTop_toBottomOf="@+id/secondsArrowGBar" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomWatch">
+        <attr name="clockFaceColor" format="color" />
+        <attr name="hoursArrowColor" format="color" />
+        <attr name="minutesArrowColor" format="color" />
+        <attr name="secondsArrowColor" format="color" />
+        <attr name="clockRadius" format="float"/>
+    </declare-styleable>
+</resources>
